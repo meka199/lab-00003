@@ -1,0 +1,15 @@
+name: hello-world 
+on: push 
+jobs:
+   my-job:
+      runs-on: ubuntu-latest 
+      steps:
+         name: my-step 
+         run: echo"run first job"
+   my-job2:
+      needs: my-job
+         runs-on: ubuntu-latest 
+         steps: 
+         name: run-after-first
+         run: echo"job 2,runs if job 1 runs succesfully"
+      
